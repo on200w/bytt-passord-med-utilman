@@ -41,7 +41,7 @@ Dette repositoryet inneholder en batch-fil (`utilman.bat`) og en enkel prosedyre
 - Se hvilken bokstav som tilhører USB-en.
 - Skriv `exit` for å gå ut av Diskpart.
 
-4️⃣ Kjør utilman.bat – steg 1
+4️⃣ Kjør utilman.bat
 
 - Skriv inn:
 
