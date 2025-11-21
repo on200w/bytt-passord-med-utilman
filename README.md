@@ -1,9 +1,6 @@
-
-
-
 # Bytt-passord-med-utilman
 
-Et enkelt verktøy og veiledning for å bytte lokalt brukerpåord ved hjelp av en USB med `utilman.bat` og Windows Recovery Mode.
+Et enkelt verktøy og veiledning for å bytte lokalt brukerpassord ved hjelp av en USB med `utilman.bat` og Windows Recovery Mode.
 
 OBS: Bruk kun dette på maskiner du har autorisasjon til å administrere. Misbruk kan være ulovlig.
 
@@ -17,58 +14,57 @@ Dette repositoryet inneholder en batch-fil (`utilman.bat`) og en enkel prosedyre
 - En USB-pinne med `utilman.bat` i roten.
 - Mulighet til å starte Windows i Recovery Mode (Feilsøking -> Avanserte alternativer -> Ledetekst).
 
+
 ## Trinnvis guide
 
-1. Start Windows i Recovery Mode
+1️⃣ Start PC i Recovery Mode
 
-	- Hold inne `Shift` og velg `Restart` fra innloggingsskjermen eller Start-menyen.
-	- Velg `Feilsøking` (Troubleshoot) -> `Avanserte alternativer` -> `Ledetekst` (Command Prompt).
+- Hold inne `Shift` mens du trykker `Restart`.
+- Hold inne `Shift` til boot-skjermen vises.
+- Vent ca. 5 sekunder før du slipper tasten.
 
-2. Finn riktig stasjonsbokstav for USB-en
+2️⃣ Åpne kommandolinje
 
-	- I ledeteksten skriv:
+- Velg `Feilsøking` (Troubleshoot).
+- Gå til `Avanserte alternativer`.
+- Velg `Ledetekst` (Command Prompt).
 
-	  ```
-	  diskpart
-	  list volume
-	  exit
-	  ```
+3️⃣ Finn riktig disk (USB)
 
-	- Merk hvilken bokstav som er tilordnet USB-en (f.eks. `D:`). Bruk denne i neste steg.
+- Skriv inn:
 
-3. Kjør `utilman.bat` fra USB
+  ```
+  diskpart
+  list volume
+  ```
 
-	- Skriv inn stasjonsbokstaven og filbanen, f.eks:
+- Se hvilken bokstav som tilhører USB-en.
+- Skriv `exit` for å gå ut av Diskpart.
 
-	  ```
-	  D:\utilman.bat
-	  ```
+4️⃣ Kjør utilman.bat – steg 1
 
-	- Velg menyvalget for å ta backup av `utilman.exe` og erstatte det med `cmd.exe` (typisk "Steg 1").
-	- Start maskinen på nytt (reboot).
+- Skriv inn:
 
-4. Endre passord fra innloggingsskjermen
+  ```
+  D:\utilman.bat
+  ```
 
-	- På innloggingsskjermen klikker du på Hjelpemiddel-ikonet (Ease of Access) nederst til venstre.
-	- Det skal nå åpne en kommandolinje (cmd) som systembruker.
-	- For å liste lokale brukere skriv:
+  (Bytt `D:` med riktig stasjonsbokstav for USB-en.)
 
-	  ```
-	  net user
-	  ```
+- Velg **Steg 1** i menyen for å ta backup av `utilman.exe` og erstatte den med `cmd.exe`.
+- Reboot PC-en.
 
-	- For å sette nytt passord for en bruker:
+5️⃣ Endre passord via innloggingsskjermen
 
-	  ```
-	  net user Brukernavn NyttPassord
-	  ```
+- På innloggingsskjermen, trykk på personen nederst i venstre hjørne (hjelpemiddel-ikonet).
+- Skriv inn samme kommando som du brukte for å åpne `utilman.bat` i Recovery Mode (f.eks. `D:\utilman.bat`).
+- Velg **Steg 2** i menyen og følg instruksjonene for å endre passordet.
 
-	- Bytt ut `Brukernavn` og `NyttPassord` med riktig bruker og ønsket passord.
+6️⃣ Gjenopprett utilman.exe
 
-5. Gjenopprett original `utilman.exe`
-
-	- Start maskinen tilbake i Recovery Mode og åpne `Ledetekst`.
-	- Kjør `utilman.bat` fra USB igjen og velg menyvalget for å gjenopprette original `utilman.exe` (typisk "Steg 3").
+- Start PC-en tilbake i Recovery Mode.
+- Åpne kommandolinje og kjør `utilman.bat` igjen.
+- Velg **Steg 3** i menyen for å gjenopprette original `utilman.exe`.
 
 ## Viktig sikkerhet og ansvar
 
