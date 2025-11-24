@@ -11,7 +11,7 @@ set klokke=%time:~0,8%
 :menu
 cls
 echo ╔═══════════════════════════════════════════════════════════════════════════╗
-echo ║                          Utilman Passord-Reset Verktøy                    ║
+echo ║                       Utilman Passord-Reset Verktøy                       ║
 echo ╠═══════════════════════════════════════════════════════════════════════════╣
 echo ║ Tid: %klokke%                                                             ║
 echo ║ Dato: %dato%                                                         ║
