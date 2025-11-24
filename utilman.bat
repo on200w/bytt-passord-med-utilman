@@ -4,18 +4,22 @@ title Utilman Passordverktøy
 color 0A
 
 :: Sett versjon og klokke/dato
-set versjon=1.4
+set versjon=1.5
 set dato=%date% 
 set klokke=%time:~0,8%
 
 :menu
 cls
 echo ╔═══════════════════════════════════════════════════════════════════════════╗
-echo ║                       Utilman Passord-Reset Verktøy                       ║
+echo ║                              Informasjon                                  ║
 echo ╠═══════════════════════════════════════════════════════════════════════════╣
 echo ║ Tid:  %klokke%                                                            ║
 echo ║ Dato: %dato%                                                         ║
 echo ║ Versjon: %versjon%                                                              ║
+echo ╚═══════════════════════════════════════════════════════════════════════════╝
+echo.
+echo ╔═══════════════════════════════════════════════════════════════════════════╗
+echo ║                      Utilman Passord-Reset Verktøy                        ║
 echo ╠═══════════════════════════════════════════════════════════════════════════╣
 echo ║  1 - Bytte utilman.exe med cmd.exe                                        ║
 echo ║  2 - Endre passord                                                        ║
