@@ -4,19 +4,16 @@ title Utilman Passordverktøy
 color 0A
 
 :menu
-cls
-echo =============================================
-echo =       Utilman Passord-Reset Verktøy       =
-echo =============================================
+echo ╔════════════════════════════════════════════════════════════╗
+echo ║              Utilman Passord-Reset Verktøy                 ║
+echo ╠════════════════════════════════════════════════════════════╣
+echo ║  1 - Bytte utilman.exe med cmd.exe                         ║
+echo ║  2 - Endre passord                                         ║
+echo ║  3 - Gjenopprette utilman.exe                              ║
+echo ║  4 - Avslutt                                               ║
+echo ╚════════════════════════════════════════════════════════════╝
 echo.
-echo Velg handling:
-echo.
-echo   1 - Bytte utilman.exe med cmd.exe        (kjør i recovery mode)
-echo   2 - Endre passord                        (kjør i utilman)
-echo   3 - Gjenopprette utilman.exe             (kjør i recovery mode)
-echo   4 - Avslutt
-echo.
-set /p valg= Skriv inn valg: 
+set /p valg= Skriv inn valg (1-4): 
 
 if "%valg%"=="1" goto steg1
 if "%valg%"=="2" goto steg2
@@ -36,7 +33,7 @@ goto menu
 :steg2
 echo Skriv inn brukernavn:
 set /p brukernavn=
-echo Skriv inn nytt passord:
+echo Skriv inn nytt passord (trykk Enter for blankt):
 set /p nyttpassord=
 echo Endrer passord for %brukernavn% ...
 net user "%brukernavn%" "%nyttpassord%"
