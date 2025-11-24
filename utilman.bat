@@ -3,26 +3,25 @@ chcp 65001 >nul
 title Utilman Passordverktøy
 color 0A
 
-:: Sett versjon og dato
-set versjon=1.3
-set dato=%date%
-set klokke=%time%
+:: Sett versjon og klokke/dato
+set versjon=1.4
+set dato=%date% 
+set klokke=%time:~0,8%
 
 :menu
 cls
-echo Tid: %klokke%
-echo Dato: %dato%
-echo Versjon: %versjon%   
-echo.
-
-echo ╔════════════════════════════════════════════════════════════╗
-echo ║              Utilman Passord-Reset Verktøy                 ║
-echo ╠════════════════════════════════════════════════════════════╣
-echo ║  1 - Bytte utilman.exe med cmd.exe                         ║
-echo ║  2 - Endre passord                                         ║
-echo ║  3 - Gjenopprette utilman.exe                              ║
-echo ║  4 - Avslutt                                               ║
-echo ╚════════════════════════════════════════════════════════════╝
+echo ╔═══════════════════════════════════════════════════════════════════════════╗
+echo ║                          Utilman Passord-Reset Verktøy                    ║
+echo ╠═══════════════════════════════════════════════════════════════════════════╣
+echo ║ Tid: %klokke%                                                             ║
+echo ║ Dato: %dato%                                                         ║
+echo ║ Versjon: %versjon%                                                              ║
+echo ╠═══════════════════════════════════════════════════════════════════════════╣
+echo ║  1 - Bytte utilman.exe med cmd.exe                                        ║
+echo ║  2 - Endre passord                                                        ║
+echo ║  3 - Gjenopprette utilman.exe                                             ║
+echo ║  4 - Avslutt                                                              ║
+echo ╚═══════════════════════════════════════════════════════════════════════════╝
 echo.
 set /p valg= Skriv inn valg (1-4): 
 
@@ -46,7 +45,6 @@ echo Ferdig! Du kan starte maskinen på nytt manuelt når du vil.
 echo [%date% %time%] Valg 1: utilman.exe ble byttet med cmd.exe, backup lagret som utilman.exe.bak >> logg.txt
 pause
 goto menu
-
 
 :steg2
 echo Skriv inn brukernavn:
