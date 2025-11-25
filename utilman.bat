@@ -39,8 +39,11 @@ echo ╔════════════════════════
 echo ║                      Utilman Passord-Reset Verktøy                        ║
 echo ╠═══════════════════════════════════════════════════════════════════════════╣
 echo ║  1 - Bytte utilman.exe med cmd.exe                                        ║
+echo ║                                                                           ║
 echo ║  2 - Endre passord                                                        ║
+echo ║                                                                           ║
 echo ║  3 - Gjenopprette utilman.exe                                             ║
+echo ║                                                                           ║
 echo ║  4 - Avslutt                                                              ║
 echo ╚═══════════════════════════════════════════════════════════════════════════╝
 echo.
