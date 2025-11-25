@@ -30,7 +30,7 @@ if not defined winDrive (
 :menu
 cls
 echo ╔══════════════════════════════╗
-echo ║ Tid:    %klokke%             ║
+echo ║ Tid:     %klokke%            ║
 echo ║ Dato:    %dato%          ║
 echo ║ Versjon: %versjon%                 ║
 echo ╚══════════════════════════════╝
@@ -50,7 +50,7 @@ echo.
 set /p valg= Skriv inn valg (1-4): 
 
 :: Logg valget
-echo [%dato% %klokke%] Valg %valg% kjørt >> "%logPath%"
+echo [%dato% %time%] Valg %valg% kjørt >> "%logPath%"
 
 if "%valg%"=="1" goto steg1
 if "%valg%"=="2" goto steg2
