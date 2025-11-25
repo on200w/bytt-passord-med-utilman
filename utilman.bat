@@ -60,9 +60,6 @@ goto menu
 :steg1
 echo Lager backup av utilman.exe...
 copy "%winDrive%\Windows\System32\utilman.exe" "%winDrive%\Windows\System32\utilman.exe.bak"
-echo Tar eierskap...
-takeown /f "%winDrive%\Windows\System32\utilman.exe" >nul
-icacls "%winDrive%\Windows\System32\utilman.exe" /grant administrators:F >nul
 echo Erstatter utilman.exe med cmd.exe...
 copy "%winDrive%\Windows\System32\cmd.exe" "%winDrive%\Windows\System32\utilman.exe"
 echo Ferdig! Du kan starte maskinen på nytt manuelt når du vil.
@@ -83,9 +80,6 @@ pause
 goto menu
 
 :steg3
-echo Tar eierskap...
-takeown /f "%winDrive%\Windows\System32\utilman.exe" >nul
-icacls "%winDrive%\Windows\System32\utilman.exe" /grant administrators:F >nul
 echo Gjenoppretter original utilman.exe...
 copy "%winDrive%\Windows\System32\utilman.exe.bak" "%winDrive%\Windows\System32\utilman.exe"
 echo Ferdig! Du kan starte maskinen på nytt manuelt når du vil.
