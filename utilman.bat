@@ -31,7 +31,7 @@ cls
 set klokke=%time:~0,8%
 set dato=%date%
 echo ╔═════════════════════════════════╗
-echo ║ Versjon %versjon%                     ║
+echo ║          Versjon %versjon%            ║
 echo ╠═════════════════════════════════╣
 echo ║ Tid:        %klokke%            ║
 echo ║ Dato:       %dato%          ║
