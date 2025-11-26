@@ -50,11 +50,8 @@ echo ║  4 - Avslutt                                                           
 echo ╚═══════════════════════════════════════════════════════════════════════════╝
 echo.
 
-:: Vent på brukervalget med 1s timeout — 9 er "ingen handling"/refresh
-choice /n /c:12349 /t 1 /d 9 >nul
-:: choice returns an index (1..n). Når default (9) triggeres, det blir index 5.
-:: Sjekk høyeste først slik at default (index 5) hopper tilbake til menyen.
-if errorlevel 5 goto loop
+:: Vent på brukervalget (blokkerende) — trykk et tall for å velge
+choice /n /c:1234 >nul
 if errorlevel 4 goto steg4
 if errorlevel 3 goto steg3
 if errorlevel 2 goto steg2
