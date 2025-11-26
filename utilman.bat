@@ -50,12 +50,14 @@ echo ║  4 - Avslutt                                                           
 echo ╚═══════════════════════════════════════════════════════════════════════════╝
 echo.
 
-:: Vent på brukervalget (blokkerende) — trykk et tall for å velge
-choice /n /c:1234 >nul
-if errorlevel 4 goto steg4
-if errorlevel 3 goto steg3
-if errorlevel 2 goto steg2
-if errorlevel 1 goto steg1
+:: Vent på brukervalget — skriv tallet og trykk Enter (bedre i Recovery Mode)
+set "valg="
+set /p "valg=Valg (1-4): "
+if "%valg%"=="1" goto steg1
+if "%valg%"=="2" goto steg2
+if "%valg%"=="3" goto steg3
+if "%valg%"=="4" goto steg4
+:: Hvis ugyldig eller tomt, vis meny på nytt
 goto loop
 
 :steg1
@@ -76,7 +78,7 @@ goto loop
 
 :steg3
 copy "%winDrive%\Windows\System32\utilman.exe.bak" "%winDrive%\Windows\System32\utilman.exe"
-echo [%date% %time%] Valg 3: utilman.exe gjenopprettet >> "%logPath%"
+echo [%date% %time%] Valg 3: utilman.exe gjenopprettet i %winDrive% >> "%logPath%"
 pause
 goto loop
 
